@@ -1,183 +1,240 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
+  padding: 40px 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
-  padding: 40px 30px;
-  color: #ffd700; /* Soft Gold text */
-  text-align: center;
+  background: #f4f8fb;
+  color: #1a3e72;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-height: 100vh;
 }
 
 /* Headings */
 h1 {
-  color: #ffd700; /* Bright Soft Gold */
+  margin-bottom: 40px;
   font-size: 3rem;
-  margin-bottom: 30px;
+  color: #1565c0;
   font-weight: 700;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 4px #b38600;
+  text-align: center;
 }
 
-h2, h3 {
-  color: #ffec70; /* Lighter gold for sub-headings */
-  margin-bottom: 18px;
-  font-weight: 600;
-  text-shadow: 0 0 3px #a87a00;
+/* Register/Login Container */
+#register, #login {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(21, 101, 192, 0.15);
+  padding: 30px 35px;
+  width: 400px;
+  max-width: 90vw;
+  margin-bottom: 40px;
+  color: #15396b;
 }
 
-/* Override Register/Login text (h2 in #register and #login) to black */
+/* Two-column wrapper for Register/Login */
+#register-login-wrapper {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 930px;
+  margin-bottom: 60px;
+}
+
+/* Headings inside forms */
 #register h2, #login h2 {
-  color: black !important;
-  text-shadow: none !important;
-}
-
-/* Override election names (h3 inside .election-card) to black */
-.election-card h3 {
-  color: black !important;
-  text-shadow: none !important;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #1565c0;
+  padding-bottom: 8px;
   font-weight: 700;
-  margin-top: 0;
 }
 
 /* Inputs */
 input[type="text"],
 input[type="password"],
 input[type="datetime-local"] {
-  width: 320px;
-  max-width: 90vw;
+  width: 100%;
   padding: 14px 18px;
-  margin: 10px 0 22px;
+  margin: 12px 0 22px;
   border-radius: 8px;
-  border: 1.8px solid #ffd700;
-  background-color: #fff9e6;
-  color: #6b4f00;
+  border: 2px solid #a8c0f0;
+  background-color: #e9f0fb;
   font-size: 1.1rem;
-  box-shadow: inset 1px 1px 6px #ffec7066;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  color: #1a3e72;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="datetime-local"]:focus {
   outline: none;
-  border-color: #ffca28;
-  box-shadow: 0 0 10px #ffca2877;
+  border-color: #1565c0;
+  box-shadow: 0 0 8px #5a8ed6aa;
 }
 
 /* Buttons */
 button {
-  padding: 14px 36px;
-  background-color: #ffd700;
-  color: #4b3600;
-  font-size: 1.1rem;
+  width: 100%;
+  background-color: #1565c0;
   border: none;
+  color: white;
+  padding: 14px 20px;
   border-radius: 10px;
+  font-size: 1.15rem;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.7);
-  transition: background-color 0.3s ease, transform 0.15s ease;
-  user-select: none;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  box-shadow: 0 6px 15px rgba(21, 101, 192, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
 }
 
 button:hover {
-  background-color: #ffca28;
-  box-shadow: 0 6px 22px rgba(255, 202, 40, 0.9);
-  transform: translateY(-2px);
+  background-color: #12509e;
+  box-shadow: 0 8px 20px rgba(18, 80, 158, 0.7);
+  transform: translateY(-3px);
 }
 
 button:active {
   transform: translateY(1px);
 }
 
-/* Container elements */
-#register, #login, #elections-container, #candidates-list {
-  background-color: #ffffffcc;
-  padding: 35px 40px;
-  border-radius: 15px;
-  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.3);
-  width: 400px;
-  max-width: 95vw;
-  margin: 0 auto 40px auto;
-  text-align: left;
-  color: #4b3600;
+/* Elections container and grid */
+#elections-container {
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
 }
 
-/* Election cards */
+/* Election card */
 .election-card {
-  background: #fff9e6;
+  background: white;
   border-radius: 18px;
-  padding: 28px 32px;
-  margin-bottom: 24px;
-  box-shadow: 0 7px 20px rgba(255, 215, 0, 0.15);
-  color: #563c00;
+  padding: 24px 28px;
+  box-shadow: 0 6px 20px rgba(21, 101, 192, 0.15);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  color: #115293;
+  position: relative;
 }
 
-.election-card button {
-  margin: 10px 12px 10px 0;
-  border-radius: 22px;
-  padding: 12px 26px;
-  font-size: 1rem;
-  background-color: #fff176;
-  color: #4b3600;
-  box-shadow: 0 4px 14px rgba(255, 241, 118, 0.7);
+.election-card:hover {
+  box-shadow: 0 10px 35px rgba(18, 80, 158, 0.35);
 }
 
-.election-card button:hover {
-  background-color: #ffee58;
-  box-shadow: 0 6px 18px rgba(255, 238, 88, 0.9);
+.election-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #124378;
 }
 
-/* List styling for results */
+/* Candidate buttons container */
+.candidate-buttons {
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+
+.election-card button.vote-btn {
+  background-color: #2a71d0;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  border-radius: 20px;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  width: auto;
+  box-shadow: 0 4px 10px rgba(42, 113, 208, 0.6);
+}
+
+.election-card button.vote-btn:hover {
+  background-color: #1e55a3;
+  box-shadow: 0 6px 18px rgba(30, 85, 163, 0.8);
+}
+
+/* Results list */
 .election-card ul {
   list-style: none;
-  padding-left: 18px;
-  margin-top: 10px;
+  padding-left: 15px;
+  margin-top: 0; 
+  margin-bottom: 12px;
 }
 
 .election-card li {
-  padding: 6px 0;
-  font-weight: 500;
-  color: #7f6a00;
+  font-weight: 600;
+  color: #1b3a72;
+  padding: 5px 0;
 }
 
-/* Candidates list on add-election.html */
+/* “Show Chart” button */
+.election-card button.show-chart-btn {
+  align-self: flex-start;
+  background-color: #3c7ddd;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  box-shadow: 0 4px 12px rgba(60, 125, 221, 0.6);
+}
+
+.election-card button.show-chart-btn:hover {
+  background-color: #295ea8;
+  box-shadow: 0 6px 18px rgba(41, 94, 168, 0.85);
+}
+
+/* Add election page containers */
+#candidates-list {
+  min-height: 40px;
+  margin-bottom: 15px;
+}
+
+/* Candidates tags style */
 #candidates-list div {
-  background-color: #fff3b0;
-  border-radius: 6px;
-  padding: 6px 10px;
-  margin-bottom: 6px;
   display: inline-block;
-  font-weight: 600;
-  color: #8c6d00;
+  background: #cce4ff;
+  border-radius: 12px;
+  padding: 6px 14px;
+  margin: 4px 6px 4px 0;
+  font-weight: 700;
+  color: #1a3e72;
+  box-shadow: 0 2px 6px rgba(26, 62, 114, 0.2);
+  user-select: none;
+}
+
+/* Chart canvas styling */
+#resultsChart {
+  background-color: white;
+  border-radius: 16px;
+  padding: 20px;
+  width: 320px !important;
+  height: 240px !important;
+  margin-bottom: 50px;
+  box-shadow: 0 10px 30px rgba(18, 80, 158, 0.2);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Responsive adjustments */
-@media (max-width: 480px) {
-  #register, #login, #elections-container, #candidates-list {
+@media (max-width: 900px) {
+  #register-login-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  #register, #login {
     width: 90vw;
-    padding: 25px 20px;
   }
-  input[type="text"],
-  input[type="password"],
-  input[type="datetime-local"] {
-    width: 100%;
-    font-size: 1rem;
-    padding: 12px 12px;
-  }
-  button {
-    width: 100%;
-    padding: 14px;
-    font-size: 1.05rem;
+  #elections-container {
+    grid-template-columns: 1fr;
+    max-width: 90vw;
   }
 }
 
-/* Chart canvas size adjustment */
-#resultsChart {
-  width: 300px !important;
-  height: 225px !important;
-  margin: 0 auto 40px auto;
-  display: block;
-  background: #fff9e6;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 7px 20px rgba(255, 215, 0, 0.15);
-}
