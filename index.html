@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Online Voting System - Register / Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Online Voting System</h1>
+  
+  <div id="register">
+    <h2>Register</h2>
+    <input type="text" id="reg_username" placeholder="Username" required />
+    <input type="password" id="reg_password" placeholder="Password" required />
+    <button onclick="registerUser()">Register</button>
+  </div>
+
+  <div id="login">
+    <h2>Login</h2>
+    <input type="text" id="login_username" placeholder="Username" required />
+    <input type="password" id="login_password" placeholder="Password" required />
+    <button onclick="loginUser()">Login</button>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

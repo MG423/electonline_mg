@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Election</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Add New Election</h1>
+  <button onclick="location.href='elections.html'" style="margin-bottom: 20px; background-color: #2a6ebb;">Back to Elections</button>
+
+  <label>Election Name:</label>
+  <input type="text" id="election_name" placeholder="Enter election name" required />
+  
+  <label>Due Date & Time:</label>
+  <input type="datetime-local" id="election_due_date" required />
+  
+  <h3>Candidates</h3>
+  <div id="candidates-list" style="margin-bottom: 15px;"></div>
+  <input type="text" id="candidate_name" placeholder="Candidate Name" />
+  <button onclick="addCandidate()">Add Candidate</button>
+  <br />
+  <button onclick="saveElection()" style="margin-top: 20px; background-color: #2a6ebb;">Save Election</button>
+
+  <script src="main.js"></script>
+</body>
+</html>

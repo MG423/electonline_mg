@@ -1,0 +1,183 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+  padding: 40px 30px;
+  color: #ffd700; /* Soft Gold text */
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* Headings */
+h1 {
+  color: #ffd700; /* Bright Soft Gold */
+  font-size: 3rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px #b38600;
+}
+
+h2, h3 {
+  color: #ffec70; /* Lighter gold for sub-headings */
+  margin-bottom: 18px;
+  font-weight: 600;
+  text-shadow: 0 0 3px #a87a00;
+}
+
+/* Override Register/Login text (h2 in #register and #login) to black */
+#register h2, #login h2 {
+  color: black !important;
+  text-shadow: none !important;
+}
+
+/* Override election names (h3 inside .election-card) to black */
+.election-card h3 {
+  color: black !important;
+  text-shadow: none !important;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="password"],
+input[type="datetime-local"] {
+  width: 320px;
+  max-width: 90vw;
+  padding: 14px 18px;
+  margin: 10px 0 22px;
+  border-radius: 8px;
+  border: 1.8px solid #ffd700;
+  background-color: #fff9e6;
+  color: #6b4f00;
+  font-size: 1.1rem;
+  box-shadow: inset 1px 1px 6px #ffec7066;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime-local"]:focus {
+  outline: none;
+  border-color: #ffca28;
+  box-shadow: 0 0 10px #ffca2877;
+}
+
+/* Buttons */
+button {
+  padding: 14px 36px;
+  background-color: #ffd700;
+  color: #4b3600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.7);
+  transition: background-color 0.3s ease, transform 0.15s ease;
+  user-select: none;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #ffca28;
+  box-shadow: 0 6px 22px rgba(255, 202, 40, 0.9);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Container elements */
+#register, #login, #elections-container, #candidates-list {
+  background-color: #ffffffcc;
+  padding: 35px 40px;
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.3);
+  width: 400px;
+  max-width: 95vw;
+  margin: 0 auto 40px auto;
+  text-align: left;
+  color: #4b3600;
+}
+
+/* Election cards */
+.election-card {
+  background: #fff9e6;
+  border-radius: 18px;
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 7px 20px rgba(255, 215, 0, 0.15);
+  color: #563c00;
+}
+
+.election-card button {
+  margin: 10px 12px 10px 0;
+  border-radius: 22px;
+  padding: 12px 26px;
+  font-size: 1rem;
+  background-color: #fff176;
+  color: #4b3600;
+  box-shadow: 0 4px 14px rgba(255, 241, 118, 0.7);
+}
+
+.election-card button:hover {
+  background-color: #ffee58;
+  box-shadow: 0 6px 18px rgba(255, 238, 88, 0.9);
+}
+
+/* List styling for results */
+.election-card ul {
+  list-style: none;
+  padding-left: 18px;
+  margin-top: 10px;
+}
+
+.election-card li {
+  padding: 6px 0;
+  font-weight: 500;
+  color: #7f6a00;
+}
+
+/* Candidates list on add-election.html */
+#candidates-list div {
+  background-color: #fff3b0;
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-bottom: 6px;
+  display: inline-block;
+  font-weight: 600;
+  color: #8c6d00;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  #register, #login, #elections-container, #candidates-list {
+    width: 90vw;
+    padding: 25px 20px;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime-local"] {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px 12px;
+  }
+  button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.05rem;
+  }
+}
+
+/* Chart canvas size adjustment */
+#resultsChart {
+  width: 300px !important;
+  height: 225px !important;
+  margin: 0 auto 40px auto;
+  display: block;
+  background: #fff9e6;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 7px 20px rgba(255, 215, 0, 0.15);
+}
