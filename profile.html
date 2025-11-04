@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Profile</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>User Profile</h1>
+  <div style="margin-bottom: 20px; display: flex; gap: 12px; justify-content: center;">
+    <button onclick="logout()" style="background-color: #d32f2f;">Logout</button>
+    <button onclick="window.location.href='elections.html'" style="background-color: #2a6ebb;">Back to Elections</button>
+  </div>
+
+  <div id="profile-container" style="max-width: 400px; margin: auto; background: #ffffffcc; padding: 35px; border-radius: 15px; box-shadow: 0 12px 30px rgba(42, 107, 187, 0.3); color: #2a3e72;">
+    <label for="profile_username" style="font-weight: 700; font-size: 1.1rem;">Username:</label><br />
+    <input type="text" id="profile_username" placeholder="Your username" style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 2px solid #2a6ebb; font-size: 1rem;" />
+    <label for="profile_password" style="font-weight: 700; font-size: 1.1rem;">New Password:</label><br />
+    <input type="password" id="profile_password" placeholder="Leave blank to keep unchanged" style="width: 100%; padding: 12px; margin-bottom: 25px; border-radius: 8px; border: 2px solid #2a6ebb; font-size: 1rem;" />
+    <button onclick="updateProfile()">Update Profile</button>
+  </div>
+
+  <script src="profile.js"></script>
+</body>
+</html>
