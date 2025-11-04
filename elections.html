@@ -8,13 +8,36 @@
 </head>
 <body>
   <h1>Active Elections</h1>
-  <button onclick="logout()" style="margin-bottom: 20px;">Logout</button>
-  <button onclick="location.href='add-election.html'" style="margin-bottom: 20px; background-color: #2a6ebb;">Add New Election</button>
+
+  <!-- Navigation buttons -->
+  <div style="margin-bottom: 20px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+    <button onclick="logout()">Logout</button>
+    <button onclick="window.location.href='profile.html'" style="background-color: #4caf50;">My Profile</button>
+    <button onclick="window.location.href='add-election.html'" style="background-color: #2a6ebb;">Add New Election</button>
+  </div>
+
+  <!-- Search box -->
+  <input type="text" id="searchInput" placeholder="Search elections..." 
+    style="width: 300px; max-width: 90vw; padding: 10px 15px; border: 2px solid #2a6ebb; border-radius: 10px; margin-bottom: 25px; font-size: 1rem;" 
+    oninput="filterElections()" />
 
   <div id="elections-container"></div>
 
   <h2>Election Results Chart</h2>
   <canvas id="resultsChart" width="400" height="300" style="background:#f0f8ff; border-radius:15px; padding:20px;"></canvas>
+
+  <!-- Voting Confirmation Modal -->
+  <div id="voteConfirmModal" style="
+    display:none; position: fixed; top:0; left:0; width:100vw; height:100vh;
+    background-color: rgba(0,0,0,0.6); justify-content: center; align-items: center;
+    z-index: 1000;">
+    <div style="background: white; padding: 25px 30px; border-radius: 15px; max-width: 320px; text-align: center; box-shadow: 0 12px 28px rgba(0,0,0,0.25);">
+      <h3 style="margin-bottom: 20px;">Confirm Your Vote</h3>
+      <p id="confirmText" style="font-size: 1.1rem; margin-bottom: 25px;"></p>
+      <button id="confirmYes" style="margin-right: 15px; background-color: #2a6ebb;">Confirm</button>
+      <button id="confirmNo" style="background-color: #d32f2f;">Cancel</button>
+    </div>
+  </div>
 
   <script src="main.js"></script>
   <script src="chart.js"></script>
