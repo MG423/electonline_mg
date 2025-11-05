@@ -19,6 +19,8 @@ function getVotes() {
 function saveVotes(votes) {
   localStorage.setItem('votes', JSON.stringify(votes));
 }
+// Add Election page logic
+let newCandidates = [];
 
 // Authentication Helpers
 function checkAuth() {
@@ -229,8 +231,7 @@ function clearChart() {
   }
 }
 
-// Add Election page logic
-let newCandidates = [];
+
 
 function addCandidate() {
   const input = document.getElementById('candidate_name');
@@ -315,3 +316,4 @@ window.onload = function() {
     checkAuth();
   }
 };
+
